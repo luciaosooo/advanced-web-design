@@ -213,6 +213,11 @@ footer {
   height: 100px;
 }
 
+.footer-star:hover {
+  transform: rotate(360deg);
+  transition: transform 1s ease-in-out;
+}
+
 .footer-info {
   margin-top: 3rem;
   padding-top: 2rem;

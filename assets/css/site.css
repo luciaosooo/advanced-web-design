@@ -1,143 +1,265 @@
-/* WEB ATELIER (UDIT) - Student Project Template Styles */
+@import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
 
-/* Reset and base styles */
+/* FONTS */
+
+@import url("https://use.typekit.net/qba8yat.css");
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  font-size: 16px;
-  line-height: 1.6;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
-  color: #333;
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #301c1b;
+  background: #ffdce8;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 0 0 1rem 0;
+/* HEADER AND NAVIGATION */
+
+header {
+  background: #ffdce8;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.5rem;
+header.scrolled {
+  border-bottom-color: #301c1b;
 }
 
-p,
-li {
-  margin-bottom: 1rem;
+nav {
+  padding: 1rem 2rem;
 }
 
-/* Layout */
-.container {
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #301c1b;
+  font-family: "Gopher";
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #666;
+}
+
+.logo {
+  margin-right: auto;
+  font-family: "Gopher";
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+ HERO COVER SECTION
+ ========================================== */
+
+.cover {
+  min-height: 100vh;
+  background: #301c1b;
+  color: #ffdce8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.hero-content {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  width: 100%;
 }
+
+.title {
+  font-family: "Gopher", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -2px;
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+.star-icon {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  transition: transform 0.6s ease;
+}
+
+.star-icon:hover {
+  transform: translateY(-50%) rotate(360deg);
+  transition: transform 1s ease-in-out;
+}
+
+/* ==========================================
+ MAIN CONTENT
+ ========================================== */
 
 main {
-  min-height: 80vh;
-  padding: 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Header */
-header {
-  background: #f8f9fa;
-  padding: 1rem 0;
-  border-bottom: 1px solid #e9ecef;
+section {
+  padding: 3rem 2rem;
+  background: #ffdce8;
+  margin-bottom: 0;
 }
 
-/* Footer */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  font-family: "Gopher", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: -1px;
+}
+
+/* ==========================================
+ BUTTONS
+ ========================================== */
+
+.visit-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid #301c1b;
+  color: #301c1b;
+  text-decoration: none;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 1000;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease;
+}
+
+.visit-btn:hover {
+  background: #301c1b;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ==========================================
+ FOOTER
+ ========================================== */
+
 footer {
-  background: #f8f9fa;
-  padding: 2rem 0;
-  margin-top: 4rem;
-  border-top: 1px solid #e9ecef;
-  font-size: 0.875rem;
-  color: #6c757d;
+  background: #301c1b;
+  color: #ffdce8;
+  padding: 4rem 2rem;
+  text-align: left;
 }
 
-footer a {
-  color: #007bff;
-  text-decoration: none;
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-footer a:hover {
-  text-decoration: underline;
+.footer-title {
+  font-family: "Gopher", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
-/* Responsive design */
+.footer-star {
+  width: 100px;
+  height: 100px;
+}
+
+.footer-info {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.github-link {
+  width: 30px;
+  height: 30px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.github-link:hover {
+  opacity: 1;
+}
+
+/* ==========================================
+ RESPONSIVE DESIGN
+ ========================================== */
+
 @media (max-width: 768px) {
-  html {
-    font-size: 14px;
+  .star-icon {
+    width: 80px;
+    height: 80px;
+    right: 5%;
   }
 
-  .container {
-    padding: 0 0.5rem;
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  h1 {
-    font-size: 2rem;
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
   }
-  h2 {
-    font-size: 1.75rem;
+
+  .footer-info {
+    flex-direction: column;
+    gap: 1rem;
   }
-  h3 {
-    font-size: 1.25rem;
-  }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* Focus styles for keyboard navigation */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
-
-/* Skip link for screen readers */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: #000;
-  color: #fff;
-  padding: 8px;
-  text-decoration: none;
-  border-radius: 4px;
-  z-index: 1000;
-}
-
-.skip-link:focus {
-  top: 6px;
 }
